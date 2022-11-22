@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneBookApp.Page.MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Contact"
+                     Command="{Binding GoToContactPage}"/>
+        <ToolbarItem Text="Logout"/>
+    </ContentPage.ToolbarItems>
+    <Grid Padding="10,10,10,40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ListView x:Name="ContactListView" HasUnevenRows="true" Grid.Row="1" SeparatorColor="Black" ItemsSource="{Binding PersonList}"  
+         SelectedItem="{Binding SelectedContactItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid  Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" Grid.Row="0" FontSize="20" TextColor="Black" />
+                                <Label Text="{Binding PhoneNumber}" Grid.Row="0" FontSize="20"  HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" TextColor="Black" />
+                            </StackLayout>
+                            
+                           
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>

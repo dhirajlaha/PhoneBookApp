@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhoneBookApp.Page"
+             x:Class="PhoneBookApp.Page.AddContactPage"
+             Title="Create New Contact"
+             Padding="5,20,5,0">
+   
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="12">
+            <local:CommontContactView/>
+            <Button x:Name="SubmitButton" Command="{Binding SaveContactCommand}" CornerRadius="0" Text="Save Contact" FontAttributes="Bold" TextColor="White" BackgroundColor="#5989B5"/>
+            <Label Text="View All Contacts" IsVisible="{Binding IsViewAll}" x:Name="ViewLbl" TextColor="Black" HorizontalOptions="EndAndExpand" FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewAllContactsCommand}" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--<StackLayout>
+            <local:CommontContactView/>
+            <Button Text="Save Contact" 
+                x:Name="btnSave"
+                TextColor="White"
+                BackgroundColor="#0F72EB"
+                Command="{Binding SaveContactCommand}"
+                Margin="0,20,0,0"/>
+            <Label Text="View All Contacts" IsVisible="{Binding IsViewAll}"
+                   x:Name="ViewLbl" TextColor="Black"
+                   HorizontalOptions="EndAndExpand" 
+                   FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewAllContactsCommand}" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>-->

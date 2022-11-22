@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneBookApp.Page.CommontContactView">
+  <ContentView.Content>
+        <!--<StackLayout Spacing="12">
+            <Entry x:Name="txtContactName" Text="{Binding Name}" HeightRequest="40" BackgroundColor="White" Placeholder="Contact Name" HorizontalOptions="FillAndExpand"/>
+            <Entry  x:Name="txtMobileNumber" Keyboard="Telephone" Text="{Binding PhoneNumber}" BackgroundColor="White" HeightRequest="40" Placeholder="Mobile Number" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtAddress" Text="{Binding Address}" HeightRequest="40" BackgroundColor="White" Placeholder="Address" HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="txtEmail" Text="{Binding Email}" HeightRequest="40" BackgroundColor="White" Placeholder="Email" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>-->
+      
+        <Grid HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="Contact Detail"
+                   FontSize="34"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="4"
+                   HorizontalOptions="Center"/>
+            <Label Text="Space for Image" 
+                   Grid.Column="3"
+                   Grid.Row="1"/>
+
+            <StackLayout Grid.Row="2"
+                         Grid.ColumnSpan="4">
+                <Entry Placeholder="Full Name"
+                       x:Name="NameEntry"
+                       Text="{Binding Name}"/>
+                <Entry Placeholder="Email" 
+                       x:Name="EmailEntry" 
+                       Keyboard="Email"
+                       Text="{Binding Email}"/>
+                <Entry Placeholder="Address" 
+                       x:Name="AddressEntry"
+                       Text="{Binding Address}"/>
+                <Entry Placeholder="PhoneNumber" 
+                       x:Name="PhoneEntry"
+                       Text="{Binding PhoneNumber}"/>
+
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+    
+      
+        
+</ContentView>
+    

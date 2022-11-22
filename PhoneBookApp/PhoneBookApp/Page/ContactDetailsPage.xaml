@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhoneBookApp.Page"
+             x:Class="PhoneBookApp.Page.ContactDetailsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update"
+                     Command="{Binding UpdatePageCommand}"
+                     IconImageSource="edit.png"/>
+        <ToolbarItem Text="Delete"
+                     Command="{Binding DeleteContactCommand}"
+                     IconImageSource="delete.png"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+            <StackLayout>
+                <Label Text="Contact Detail"
+                   FontSize="34"
+                   HorizontalOptions="Center"/>
+                <Label Text="Space for Image"
+                   HorizontalOptions="Center"/>
+            </StackLayout>
+            <Grid RowSpacing="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Name}"
+                       FontSize="28"/>
+                <Label Text="Address:" 
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+                <Label Text="{Binding Address}"
+                       Grid.Row="1"
+                       FontSize="16"
+                       Grid.Column="1"/>
+                <Label Text="Email:" 
+                       Grid.Row="2"
+                       Grid.Column="0"/>
+                <Label Text="{Binding Email}"
+                       Grid.Row="2"
+                       FontSize="16"
+                       Grid.Column="1"/>
+                <Label Text="PhoneNumber:" 
+                       Grid.Row="3"
+                       Grid.Column="0"/>
+                <Label Text="{Binding PhoneNumber}"
+                       Grid.Row="3"
+                       FontSize="16"
+                       Grid.Column="1"/>
+            </Grid>
+            <Grid Margin="0,50,0,0"
+                  Padding="0">
+                <Image Source="phone.png" Grid.Row="0" Grid.Column="0"
+                       HeightRequest="50"/>
+                <Image Source="mail.png" Grid.Row="0" Grid.Column="1"
+                       HeightRequest="50"/>
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
