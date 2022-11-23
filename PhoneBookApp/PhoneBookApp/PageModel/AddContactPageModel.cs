@@ -15,6 +15,7 @@ namespace PhoneBookApp.PageModel
 
     public class AddContactPageModel : BaseContactPageModel
     {
+
         public ICommand SaveContactCommand { get; private set; }
         public ICommand ViewAllContactsCommand { get; private set; }
         public AddContactPageModel(IValidator validator, IPhoneBookRepository phoneBookRepository) : base(validator,phoneBookRepository)

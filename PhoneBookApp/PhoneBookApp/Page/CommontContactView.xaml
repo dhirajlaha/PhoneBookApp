@@ -24,9 +24,14 @@
                    Grid.Row="0"
                    Grid.ColumnSpan="4"
                    HorizontalOptions="Center"/>
-            <Label Text="Space for Image" 
+            <Button Text="Attach Photo"
                    Grid.Column="3"
+                    Command="{Binding AttachPhoto}"
                    Grid.Row="1"/>
+            <Image Source="{Binding PhotoUrl}"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Aspect="AspectFit"/>
 
             <StackLayout Grid.Row="2"
                          Grid.ColumnSpan="4">

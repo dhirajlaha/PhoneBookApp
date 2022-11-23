@@ -21,17 +21,21 @@
                     <ViewCell>
                         <Grid  Padding="10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <StackLayout>
-                                <Label Text="{Binding Name}" Grid.Row="0" FontSize="20" TextColor="Black" />
-                                <Label Text="{Binding PhoneNumber}" Grid.Row="0" FontSize="20"  HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" TextColor="Black" />
-                            </StackLayout>
+                            
+                                <Image Source="{Binding PhotoUrl}"
+                                       Aspect="AspectFill"
+                                       Grid.RowSpan="2"/>
+                                
+                                <Label VerticalTextAlignment="End" Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontSize="18" TextColor="HotPink" />
+                            <Label Text="{Binding PhoneNumber}" Grid.Row="1" Grid.Column="1" FontSize="18"  TextColor="Black" />
+                            
                             
                            
                         </Grid>
