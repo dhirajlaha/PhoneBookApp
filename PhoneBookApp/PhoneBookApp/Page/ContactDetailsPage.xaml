@@ -20,7 +20,9 @@
                    TextColor="#3385ff"
                    HorizontalOptions="Center"/>
                 <Image Source="{Binding PhotoUrl}"
-                   HorizontalOptions="Center"/>
+                       HorizontalOptions="Center"
+                       HeightRequest="150"
+                       WidthRequest="150"/>
             </StackLayout>
             <Grid RowSpacing="2">
                 <Grid.RowDefinitions>

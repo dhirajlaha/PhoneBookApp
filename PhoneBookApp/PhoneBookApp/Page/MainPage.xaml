@@ -30,7 +30,8 @@
                             </Grid.ColumnDefinitions>
                             
                                 <Image Source="{Binding PhotoUrl}"
-                                       Aspect="AspectFill"
+                                       HeightRequest="200"
+                                       WidthRequest="150"
                                        Grid.RowSpan="2"/>
                                 
                                 <Label VerticalTextAlignment="End" Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontSize="18" TextColor="HotPink" />
