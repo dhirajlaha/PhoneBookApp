@@ -36,7 +36,7 @@ namespace PhoneBookApp.PageModel
             if (isUserAccept)
             {
                 _phoneBookRepository.UpdateContact(_person);
-                await CoreMethods.PopPageModel();
+                await App.Current.MainPage.Navigation.PopToRootAsync();
             }
         }
         

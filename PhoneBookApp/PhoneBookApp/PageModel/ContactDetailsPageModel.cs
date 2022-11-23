@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PhoneBookApp.PageModel
@@ -14,6 +15,8 @@ namespace PhoneBookApp.PageModel
     {
         public ICommand UpdatePageCommand { get; set; }
         public ICommand DeleteContactCommand { get; private set; }
+        public ICommand GoToDialer { get; private set; }
+        public ICommand GoToSMS { get; private set; }
 
         public ContactDetailsPageModel(IValidator validator,IPhoneBookRepository phoneBookRepository) : base(validator, phoneBookRepository)
         {
@@ -21,6 +24,33 @@ namespace PhoneBookApp.PageModel
 
             UpdatePageCommand = new Command(async () => await ShowContactDetails(_person.Id));
             DeleteContactCommand = new Command(async () => await DeleteContact());
+            GoToDialer = new Command( () =>  PlaceCall(_person.PhoneNumber));
+            GoToSMS = new Command(async () => await SendSMS("Hello World",_person.PhoneNumber));
+        }
+
+        private async Task SendSMS(string messageText,string recipient)
+        {
+            try
+            {
+                var message = new SmsMessage(messageText, recipient);
+                await Sms.ComposeAsync(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void PlaceCall(string number)
+        {
+            try
+            {
+                 PhoneDialer.Open(number);
+            }
+            catch(Exception ex)
+            {
+                CoreMethods.DisplayAlert("Unable to make call", "Pleas enter a number", "Ok");
+            }
         }
 
         public override void Init(object initData)

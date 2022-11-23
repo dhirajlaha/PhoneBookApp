@@ -57,10 +57,16 @@
             </Grid>
             <Grid Margin="0,50,0,0"
                   Padding="0">
-                <Image Source="phone.png" Grid.Row="0" Grid.Column="0"
-                       HeightRequest="50"/>
-                <Image Source="mail.png" Grid.Row="0" Grid.Column="1"
-                       HeightRequest="50"/>
+                <ImageButton Source="phone.png" 
+                             Grid.Row="0" 
+                             Grid.Column="0"
+                             HeightRequest="40"
+                             BackgroundColor="White"
+                             Command="{Binding GoToDialer}"/>
+                <ImageButton Source="mail.png" 
+                             Grid.Row="0" Grid.Column="1"
+                             HeightRequest="40" BackgroundColor="White"
+                             Command="{Binding GoToSMS}"/>
             </Grid>
         </StackLayout>
         

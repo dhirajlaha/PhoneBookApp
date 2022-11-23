@@ -32,8 +32,9 @@ namespace PhoneBookApp.PageModel
                 if (isUserAccept)
                 {
                     _phoneBookRepository.InsertContact(_person);
-               //     await CoreMethods.PopPageModel(null, true);
-                }
+                    await App.Current.MainPage.Navigation.PopAsync();
+                //     await CoreMethods.PopPageModel(null, true);
+            }
              
         }
 
