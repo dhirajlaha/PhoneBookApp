@@ -36,7 +36,8 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding Name}"
-                       FontSize="28"/>
+                       FontSize="28"
+                       Grid.ColumnSpan="2"/>
                 <Label Text="Address:" 
                        Grid.Row="1"
                        Grid.Column="0"/>
